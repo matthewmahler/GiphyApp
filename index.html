@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Trivia Game</title>
+  <title>Giphy App</title>
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -42,24 +42,55 @@
       </div>
     </div>
     <div class="wrapper-bottom">
-      <div class="row py-5">
-        <div class="col-md-12 align-content-center text-center">
-          <form id="gif-form">
-            <input type="text" id="gif-input" placeholder="Search">
-            <input id="add-gif" type="submit" value="search" class="search-btn">
+      <div class="row py-3">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 align-content-center text-center">
+          <form class="example" id="gif-form">
+            <input type="text" id="gif-input" placeholder="Search.." name="search">
+            <button type="submit" id="search-button" class="default-btn">
+              <span class="default-button-text">
+                SEARCH
+              </span>
+
+            </button>
           </form>
         </div>
       </div>
-      <div class="row py-5">
+      <div class="row" class="default-buttons-row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <button id="popular-gif" class="default-btn">
+            <span class="default-btn-text">
+              Popular
+            </span>
+          </button>
+          <button id="random-gif" class="default-btn">
+            <span class="default-btn-text">
+              Random
+            </span>
+          </button>
+          <button id="reaction-gif" class="default-btn">
+            <span class="default-btn-text">
+              Reactions
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="row py-3">
         <div class="col-md-2 text-center">
-          <h4>
-            Your Recent Searches
-          </h4>
-          <div class="gifs-view">
 
+          <h4>
+            Recent Searches
+          </h4>
+          <div id="search-btns">
           </div>
         </div>
         <div class="col-md-10">
+          <div class="gifs-view">
+
+          </div>
         </div>
       </div>
     </div>
