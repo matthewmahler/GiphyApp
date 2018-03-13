@@ -48,10 +48,24 @@ $(document).ready(function () {
         gifDiv.addClass("py-3")
         gifDiv.addClass("removal")
         var gifImg = $("<img>");
-        gifImg.attr("src", recent[i].images.fixed_height.url);
-        gifImg.attr("width", "90%")
+        gifImg.addClass("gif");
+        gifImg.attr("src", recent[i].images.fixed_height_still.url);
+        gifImg.attr("width", "90%");
+        gifImg.attr("data-state", "still")
+        gifImg.attr("data-still", recent[i].images.fixed_height_still.url);
+        gifImg.attr("data-animate", recent[i].images.fixed_height.url);
         gifDiv.append(gifImg);
         $("#gifs-view").after(gifDiv);
+        $(".gif").on("click", function () {
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
       }
       console.log(response);
     })
@@ -73,12 +87,26 @@ $(document).ready(function () {
         var gifDiv = $("<div>");
         gifDiv.addClass("col-md-4")
         gifDiv.addClass("py-3")
-        gifDiv.addClass("removal")
+        gifDiv.addClass("removal");
         var gifImg = $("<img>");
-        gifImg.attr("src", popular[i].images.fixed_height.url);
-        gifImg.attr("width", "90%")
+        gifImg.addClass("gif");
+        gifImg.attr("src", popular[i].images.fixed_height_still.url);
+        gifImg.attr("width", "90%");
+        gifImg.attr("data-state", "still")
+        gifImg.attr("data-still", popular[i].images.fixed_height_still.url);
+        gifImg.attr("data-animate", popular[i].images.fixed_height.url);
         gifDiv.append(gifImg);
         $("#gifs-view").after(gifDiv);
+        $(".gif").on("click", function () {
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
       }
 
       ;
@@ -105,15 +133,28 @@ $(document).ready(function () {
       gifDiv.addClass("py-3")
       gifDiv.addClass("text-center")
       gifDiv.addClass("removal")
-      var gifImg = $("<img>");
+
       var gifTitle = $("<h4>")
-
       gifTitle.text(random.title)
-
-      gifImg.attr("src", random.images.original.url);
+      var gifImg = $("<img>");
+      gifImg.addClass("gif");
+      gifImg.attr("src", random.images.fixed_height_still.url);
+      gifImg.attr("width", "90%");
+      gifImg.attr("data-state", "still")
+      gifImg.attr("data-still", random.images.fixed_height_still.url);
+      gifImg.attr("data-animate", random.images.fixed_height.url);
       gifDiv.append(gifImg);
-      gifDiv.append(gifTitle)
       $("#gifs-view").after(gifDiv);
+      $(".gif").on("click", function () {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
     })
 
   }
@@ -140,15 +181,24 @@ $(document).ready(function () {
         gifDiv.addClass("text-center")
         gifDiv.addClass("removal")
         var gifImg = $("<img>");
-        var gifTitle = $("<h4>")
-
-        gifTitle.text(reaction.title)
-
-        gifImg.attr("src", reaction[i].images.original.url);
-        gifImg.attr("width", "90%")
+        gifImg.addClass("gif");
+        gifImg.attr("src", reaction[i].images.fixed_height_still.url);
+        gifImg.attr("width", "90%");
+        gifImg.attr("data-state", "still")
+        gifImg.attr("data-still", reaction[i].images.fixed_height_still.url);
+        gifImg.attr("data-animate", reaction[i].images.fixed_height.url);
         gifDiv.append(gifImg);
-        gifDiv.append(gifTitle)
         $("#gifs-view").after(gifDiv);
+        $(".gif").on("click", function () {
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
       }
     })
   }
@@ -166,10 +216,24 @@ $(document).ready(function () {
         gifDiv.addClass("py-3")
         gifDiv.addClass("removal")
         var gifImg = $("<img>");
-        gifImg.attr("src", recent[i].images.fixed_height.url);
-        gifImg.attr("width", "90%")
+        gifImg.addClass("gif");
+        gifImg.attr("src", recent[i].images.fixed_height_still.url);
+        gifImg.attr("width", "90%");
+        gifImg.attr("data-state", "still")
+        gifImg.attr("data-still", recent[i].images.fixed_height_still.url);
+        gifImg.attr("data-animate", recent[i].images.fixed_height.url);
         gifDiv.append(gifImg);
         $("#gifs-view").after(gifDiv);
+        $(".gif").on("click", function () {
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
       }
       console.log(response);
     })
